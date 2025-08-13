@@ -1,0 +1,25 @@
+{
+  "name": "afrocreate-collections",
+  "version": "1.0.0",
+  "description": "Monorepo for Afrocreate Collections - Frontend, Backend, and Smart Contracts",
+  "private": true,
+  "workspaces": [
+    "packages/frontend",
+    "packages/backend", 
+    "packages/smart-contracts"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev --workspace=packages/frontend\" \"npm run dev --workspace=packages/backend\"",
+    "build": "npm run build --workspaces",
+    "test": "npm run test --workspaces",
+    "lint": "npm run lint --workspaces",
+    "clean": "npm run clean --workspaces"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  }
+}

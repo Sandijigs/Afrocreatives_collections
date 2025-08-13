@@ -1,0 +1,25 @@
+[package]
+name = "afrocreate-smart-contracts"
+version = "1.0.0"
+edition = "2021"
+description = "Arbitrum Stylus smart contracts for Afrocreate Collections"
+
+[dependencies]
+stylus-sdk = "0.4.2"
+alloy-primitives = "0.7.6"
+alloy-sol-types = "0.7.6"
+
+[dev-dependencies]
+tokio = { version = "1.12.0", features = ["full"] }
+ethers = "2.0.0"
+eyre = "0.6.8"
+
+[features]
+export-abi = ["stylus-sdk/export-abi"]
+
+[[bin]]
+name = "main"
+path = "src/main.rs"
+
+[lib]
+crate-type = ["cdylib"]
